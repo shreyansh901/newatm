@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Credit Card</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card-display">
+        <div class="card-front">
+          <div class="card-content">
+            <div class="logo"></div>
+            <span class="number-output">0000 0000 0000 0000</span>
+            <div class="details">
+              <span class="name-output">JANE APPLESEED</span>
+              <span
+                ><span class="month-output">00</span>/<span class="year-output"
+                  >00</span
+                ></span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="card-back">
+          <span class="cvc-output">000</span>
+        </div>
+      </div>
+      <form class="form" id="card-form" autocomplete="off">
+        <label>
+          CARDHOLDER NAME
+          <input
+            class="name-input"
+            type="text"
+            placeholder="e.g. Jane Appleseed"
+          />
+          <span class="error empty"></span>
+        </label>
+        <label>
+          CARD NUMBER
+          <input
+            class="number-input"
+            type="text"
+            maxlength="19"
+            placeholder="e.g. 1234 5678 9123 0000"
+          />
+          <span class="error empty"></span>
+          <span class="error invalid"></span>
+        </label>
+        <div class="date-container">
+          <label>
+            EXP. DATE (MM/YY)
+            <input
+              class="date-input month-input"
+              type="text"
+              maxlength="2"
+              placeholder="MM"
+            />
+            <input
+              class="date-input year-input"
+              type="text"
+              maxlength="2"
+              placeholder="YY"
+            />
+            <span class="error empty"></span>
+            <span class="error invalid"></span>
+          </label>
+          <label>
+            CVC
+            <input
+              class="cvc-input"
+              type="text"
+              maxlength="3"
+              placeholder="e.g. 123"
+            />
+            <span class="error empty"></span>
+            <span class="error invalid"></span>
+          </label>
+        </div>
+        <button class="btn" type="submit">Confirm</button>
+      </form>
+      <div class="thank-you hidden">
+        <div class="checkmark"></div>
+        <h2>THANK YOU!</h2>
+        <p>We've added your card details</p>
+        <button class="btn continue-btn">Continue</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,237 @@
+body {
+  background: #f8f8fa;
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+.container {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  padding: 32px;
+}
+.card-display {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+}
+.card-front {
+  width: 340px;
+  height: 200px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #8e2de2 0%, #4a00e0 50%, #f7971e 100%);
+  display: flex;
+  align-items: center;
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.22);
+  position: relative;
+}
+.card-content {
+  width: 100%;
+  padding: 24px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #fff;
+  margin-bottom: 20px;
+}
+.number-output {
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  transition: color 0.25s;
+}
+.details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.05rem;
+}
+.name-output {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card-back {
+  width: 340px;
+  height: 110px;
+  border-radius: 16px;
+  background: #e8e8ec;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  position: relative;
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.1);
+}
+.card-back .cvc-output {
+  background: #ccc;
+  padding: 6px 20px;
+  border-radius: 6px;
+  font-size: 1.05rem;
+  margin: 24px 32px;
+  color: #222;
+  letter-spacing: 1px;
+}
+
+.form {
+  background: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 320px;
+  width: 320px;
+}
+.form label {
+  font-weight: 500;
+  color: #222;
+  font-size: 0.97rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+input {
+  font-size: 1.05rem;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1.5px solid #cfcfde;
+  outline: none;
+  margin-bottom: 2px;
+  background: #f8f8fa;
+  transition: border-color 0.2s;
+}
+input:focus {
+  border: 1.5px solid #9422e0;
+  background: #f3e6ff;
+}
+.btn {
+  margin-top: 12px;
+  font-size: 1.08rem;
+  padding: 14px 0;
+  width: 100%;
+  border-radius: 7px;
+  background: #2d0550;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.btn:hover,
+.btn:active {
+  background: #5c23d0;
+}
+
+.error {
+  color: #d84b5f;
+  font-size: 0.93rem;
+  height: 16px;
+  line-height: 16px;
+  margin-top: 1px;
+  margin-bottom: 2px;
+  display: none;
+}
+.error.empty {
+  display: none;
+}
+.error.invalid {
+  display: none;
+}
+
+input.input-error {
+  border: 2px solid #d84b5f;
+}
+input.input-success {
+  border: 1.5px solid #43a047;
+}
+.date-container {
+  display: flex;
+  gap: 16px;
+}
+
+/* Thank You Screen */
+.thank-you {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 0;
+  width: 320px;
+  background: none;
+}
+.thank-you .checkmark {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8e2de2 0%, #4a00e0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  position: relative;
+}
+.thank-you .checkmark::after {
+  content: "";
+  width: 36px;
+  height: 18px;
+  border-left: 6px solid #fff;
+  border-bottom: 6px solid #fff;
+  position: absolute;
+  left: 16px;
+  top: 21px;
+  transform: rotate(-45deg);
+  border-radius: 3px;
+}
+.thank-you h2 {
+  font-size: 2.2rem;
+  margin: 18px 0 8px 0;
+}
+.thank-you p {
+  color: #888;
+  font-size: 1.1rem;
+  margin-bottom: 28px;
+}
+.hidden {
+  display: none !important;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    padding: 32px 6vw;
+  }
+  .card-display {
+    flex-direction: row;
+    gap: 14px;
+  }
+}
+@media (max-width: 650px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 18px 3vw;
+    gap: 28px;
+  }
+  .form,
+  .thank-you {
+    width: 95vw;
+    min-width: unset;
+    max-width: 350px;
+  }
+  .card-back,
+  .card-front {
+    width: 90vw;
+    max-width: 350px;
+  }
+}
